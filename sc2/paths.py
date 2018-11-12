@@ -6,7 +6,9 @@ import logging
 logger = logging.getLogger(__name__)
 
 BASEDIR = {
-    "Windows": "C:/Program Files (x86)/StarCraft II",
+    # "Windows": "C:/Program Files (x86)/StarCraft II",
+    # dosssman override
+    "Windows": "/run/media/z3r0/Win7/ArchWine/StarCraft II",
     "Darwin": "/Applications/StarCraft II",
     "Linux": "~/StarCraftII"
 }
@@ -30,6 +32,8 @@ CWD = {
 }
 
 PF = platform.system()
+# dosssman override to run with Wine version
+PF = "Windows"
 
 def get_env():
     # TODO: Linux env conf from: https://github.com/deepmind/pysc2/blob/master/pysc2/run_configs/platforms.py
